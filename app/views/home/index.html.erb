@@ -1,1 +1,12 @@
 <h1>Hollo !!</h1>
+
+<br/><br/>
+
+<% @news["Data"] %>
+
+<% for i in @news["Data"]  %>
+ <img src=" <%= i["imageurl"] %>"> <br/>
+ <strong>   <%= i["title"] %></strong><br/>
+ <%= i["body"] %><br/><br/>
+ <a href="<%= i["url"] %>"> Link to article... </a><br/><hr><br/>
+<% end %>
