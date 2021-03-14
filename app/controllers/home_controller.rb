@@ -17,6 +17,18 @@ class HomeController < ApplicationController
   end
   
   def prices
+    require 'net/http'
+    require 'json'
+    
+    @coinsearch = params[:findcoin].to_s.upcase
+    if @coinsearch.present?
+      
+      @searchcoin_url = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms=' + @coinsearch + '&tsyms=EUR'
+      @searchcoin_uri = URI(@searchcoin_url)
+      @searchcoin_response = Net::HTTP.get(@searchcoin_uri)
+      @searchcoin_result = JSON.parse(@searchcoin_response)
+    end
+    
   end
   
 end
