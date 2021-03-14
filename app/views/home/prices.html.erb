@@ -1,1 +1,23 @@
-<h1>Prices page</h1>
+
+<% if @coinsearch.present? %>
+
+  <% if @searchcoin_result["Response"] %>
+    <h2>Crypto symbol <%= @coinsearch %> does not exist. Check and try again!</h2>
+  <% else %>
+  
+    <% @searchcoin_result["DISPLAY"].each do |keyone, valueone| %>
+      <div class="jumbotron">
+        <h1 class="display-4"><%= keyone %></h1>
+          Price: <%= valueone["EUR"]["PRICE"] %><br/>
+          Open 24h price: <%= valueone["EUR"]["OPEN24HOUR"] %> <br/>
+          24h High: <%= valueone["EUR"]["HIGHDAY"] %><br/>
+          24h Low: <%= valueone["EUR"]["LOWDAY"] %><br/>
+          Day change in price: <%= valueone["EUR"]["CHANGE24HOUR"] %><br/>
+          Market Cap: <%= valueone["EUR"]["MKTCAP"] %><br/>
+      </div>
+    <% end %>
+    
+  <% end %>
+<% else %>
+    <h2>Enter a Coin in the search to view results</h2>
+<% end %>
