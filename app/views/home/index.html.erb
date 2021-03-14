@@ -1,12 +1,51 @@
-<h1>Hollo !!</h1>
 
-<br/><br/>
 
-<% @news["Data"] %>
 
-<% for i in @news["Data"]  %>
- <img src=" <%= i["imageurl"] %>"> <br/>
- <strong>   <%= i["title"] %></strong><br/>
- <%= i["body"] %><br/><br/>
- <a href="<%= i["url"] %>"> Link to article... </a><br/><hr><br/>
-<% end %>
+
+<table class="table table-striped table-bordered table-hover caption-top">
+  <caption>Coin values</caption>
+  <thead class="thead-dark">
+    <tr>
+       <th scope="col">Name</th>
+       <th scope="col">Price</th>
+       <th scope="col">24h High</th>
+       <th scope="col">24h Low</th>
+       <th scope="col">Market Cap</th>
+    </tr>
+    </thead>
+    <tbody>
+        <% @coin_price["DISPLAY"].each do |key, value| %>
+    <tr>
+        <td><%= key %></td>
+        <td><%= value["EUR"]["PRICE"] %></td>
+        <td><%= value["EUR"]["HIGHDAY"] %></td>
+        <td><%= value["EUR"]["LOWDAY"] %></td>
+        <td><%= value["EUR"]["MKTCAP"] %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br/>
+
+<div class="container">
+ <div class="row">
+  
+  <% for i in @news["Data"]  %>
+  
+    <div class="col-sm">
+      <div class="card" style="width: 18rem;">
+       
+        <img src="<%= i["imageurl"] %>" class="card-img-top" alt="<%= i["source"] %>">
+        <div class="card-body">
+          <h5 class="card-title"><%= i["title"] %></h5>
+          <p class="card-text"><%= i["body"] %></p>
+          <a href="<%= i["url"] %>" class="btn btn-secondary">See Full</a>
+        </div>
+        
+      </div>
+      <br/>
+    </div>
+   <% end %>
+ </div>
+</div>
