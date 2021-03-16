@@ -11,6 +11,12 @@
       </li>
     </ul>
     
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+          <%= link_to "Account Balance", balances_path, class: 'nav-link' %>
+      </li>
+    </ul>
+    
     <%= form_tag home_prices_path, :method => 'POST', class: "form-inline my-2 my-lg-0" do %>
     <%= text_field_tag 'findcoin', nil, placeholder: 'Enter Coin Name', class: 'form-control mr-sm-2' %>
     <%= submit_tag 'Search', class: 'btn btn-outline-secondary my-2 my-sm-0' %>
