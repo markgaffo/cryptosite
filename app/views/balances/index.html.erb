@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-sm-10"><h2><b>User's purchases</b></h2></div>
                     <div class="col-sm-2">
-                        <%= link_to 'Add purchase ', new_balance_path, :class =>"btn btn-info add-new" %>
+                        <%= link_to 'Add purchase ', new_balance_path, :class => "btn btn-info add-new"  %>
                     </div>
                 </div>
             </div>
@@ -27,10 +27,10 @@
                         <td><%= balance.user.username %></td>
                         <td>€<%= balance.balance %></td>
                         <td>
-							              <%= link_to 'Show', balance, :class => "btn btn-primary btn-sm" %>
-							              <% if current_user && current_user.admin? %>
-                              <%= link_to 'Edit', edit_balance_path(balance), :class => "btn btn-primary btn-sm"%>
-                              <%= link_to 'Remove', balance, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary btn-sm" %>
+							 <%= link_to 'Show', balance, :class => "btn btn-primary btn-sm" %>
+							     <% if current_user && current_user.admin? %>
+                              <%= link_to 'Edit', edit_balance_path(balance), :class => "btn btn-warning btn-sm"%>
+                              <%= link_to 'Remove', balance, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
                             <% end %>
                         </td>
                     </tr>
