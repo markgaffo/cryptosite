@@ -27,10 +27,10 @@
                         <td><%= balance.user.username %></td>
                         <td>€<%= balance.balance %></td>
                         <td>
-							 <%= link_to 'Show', balance, :class => "btn btn-primary btn-sm" %>
-							     <% if current_user && current_user.admin? %>
-                              <%= link_to 'Edit', edit_balance_path(balance), :class => "btn btn-warning btn-sm"%>
-                              <%= link_to 'Remove', balance, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
+							<%= link_to 'Show', balance, :class => "btn btn-primary btn-sm" %>
+							<% if current_user && current_user.admin? %>
+                                <%= link_to 'Edit', edit_balance_path(balance), :class => "btn btn-warning btn-sm"%>
+                                <%= link_to 'Remove', balance, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
                             <% end %>
                         </td>
                     </tr>
