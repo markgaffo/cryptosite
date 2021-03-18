@@ -18,7 +18,7 @@
       <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-secondary my-2 my-sm-0' %>
     <% else %>
       <%= link_to 'Signup', new_user_registration_path, class: 'btn btn-outline-secondary my-2 my-sm-0'%>
-      <%= link_to 'log in', new_user_session_path, class: 'btn btn-outline-secondary my-2 my-sm-0' %>
+      <%= link_to 'Login', new_user_session_path, class: 'btn btn-outline-secondary my-2 my-sm-0' %>
     <% end %>
     <%= form_tag home_prices_path, :method => 'POST', class: "form-inline my-2 my-lg-0" do %>
     <%= text_field_tag 'findcoin', nil, placeholder: 'Enter Crypto Tag', class: 'form-control mr-sm-2' %>
