@@ -22,7 +22,7 @@ class HomeController < ApplicationController
     
     @coinsearch = params[:findcoin].to_s.upcase
     if @coinsearch.present?
-      
+      #needed for search bar
       @searchcoin_url = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms=' + @coinsearch + '&tsyms=EUR'
       @searchcoin_uri = URI(@searchcoin_url)
       @searchcoin_response = Net::HTTP.get(@searchcoin_uri)
