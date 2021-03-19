@@ -5,6 +5,17 @@ class ProfilesController < ApplicationController
   def index
     @profiles = Profile.all
   end
+  
+  def signedinuserprofile 
+    profile = Profile.find_by_user_id(current_user.id) 
+    if profile.nil? 
+      redirect_to "/profiles/new"
+    else
+      @profile = Profile.find_by_user_id(current_user.id) 
+      redirect_to "/profiles/#{@profile.id}" 
+    end
+  end
+
 
   # GET /profiles/1 or /profiles/1.json
   def show
@@ -12,7 +23,13 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
-    @profile = current_user.build_profile
+    @profile = Profile.new 
+    @profile.user_id = current_user.id
+    
+    respond_to do |format|
+      format.html 
+      format.json { render json: @profile }
+    end
   end
 
   # GET /profiles/1/edit
