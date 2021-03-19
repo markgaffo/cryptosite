@@ -16,6 +16,11 @@
     
     <% if current_user %>
       <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-secondary my-2 my-sm-0' %>
+      <% if current_user.profile == nil %> 
+        <%= link_to 'Create Profile', new_profile_path, class: 'btn btn-outline-primary my-2 my-sm-0' %>
+      <% else %>
+        <%= link_to 'Profile', current_user.profile, class: 'btn btn-outline-primary my-2 my-sm-0' %>
+      <% end %>
     <% else %>
       <%= link_to 'Signup', new_user_registration_path, class: 'btn btn-outline-secondary my-2 my-sm-0'%>
       <%= link_to 'Login', new_user_session_path, class: 'btn btn-outline-secondary my-2 my-sm-0' %>
