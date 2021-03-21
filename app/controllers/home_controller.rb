@@ -14,6 +14,14 @@ class HomeController < ApplicationController
     @coin_response = Net::HTTP.get(@coin_uri)
     @coin_price = JSON.parse(@coin_response)
     
+    #another crytpo info site
+    @curr_url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=100&CMC_PRO_API_KEY=ae35850b-71ac-42cc-8804-fc3c37932a1d'
+    @curr_uri = URI(@curr_url)
+    @curr_response = Net::HTTP.get(@curr_uri)
+    @extra_coin_price = JSON.parse(@curr_response)
+    
+    @coins_arr = ["BTC", "ADA", "OMG", "XRP", "STEEM", "ETH" ] 
+    
   end
   
   def prices
@@ -27,8 +35,8 @@ class HomeController < ApplicationController
       @searchcoin_uri = URI(@searchcoin_url)
       @searchcoin_response = Net::HTTP.get(@searchcoin_uri)
       @searchcoin_result = JSON.parse(@searchcoin_response)
+      
     end
-    
   end
-  
+    
 end
