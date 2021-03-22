@@ -1,22 +1,25 @@
-<p>
-  <strong>Symbol:</strong>
-  <%= @crypto.symbol %>
-</p>
+<div class="jumbotron">
+  <p>
+    <h1><strong><%= @crypto.symbol %></strong></h1>
+  </p>
+  
+  <p>
+    <strong>User:</strong>
+    <%= @crypto.user_id %>
+  </p>
+  
+  <p>
+    <strong>Bought price:</strong>
+    <%= @crypto.cost_per %>
+  </p>
+  
+  <p>
+    <strong>Amount owned:</strong>
+    <%= @crypto.amount_owned %>
+  </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @crypto.user_id %>
-</p>
+</div>
 
-<p>
-  <strong>Cost per:</strong>
-  <%= @crypto.cost_per %>
-</p>
-
-<p>
-  <strong>Amount owned:</strong>
-  <%= @crypto.amount_owned %>
-</p>
 
 <%= link_to 'Edit', edit_crypto_path(@crypto), :class => "btn btn-primary" %>  |
 <%= link_to 'Delete Crypto', crypto_path(@crypto), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %> |

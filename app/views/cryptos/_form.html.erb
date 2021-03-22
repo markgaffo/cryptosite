@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :symbol %>
+    <%= form.label "Symbol of coin" %>
     <%= form.text_field :symbol, id: :crypto_symbol, class: "form-control" %>
   </div>
 
@@ -21,15 +21,16 @@
   </div>
 
   <div class="field">
-    <%= form.label :cost_per %>
-    <%= form.text_field :cost_per, id: :crypto_cost_per, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :amount_owned %>
+    <%= form.label "Amount owned" %>
     <%= form.text_field :amount_owned, id: :crypto_amount_owned, class: "form-control" %>
   </div>
 
+  <div class="field">
+    <%= form.label "Price bought at in dollars" %>
+    <%= form.text_field :cost_per, id: :crypto_cost_per, class: "form-control" %>
+  </div>
+
+  <br/>
   <div class="actions">
     <%= form.submit %>
   </div>
