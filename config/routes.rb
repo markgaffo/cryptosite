@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :cryptos
   resources :profiles
   resources :balances
   
