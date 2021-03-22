@@ -22,15 +22,18 @@
   </tbody>
 </table>
 
-<br/>
 
-<% for cdata in  @extra_coin_price["data"] %>
-    <% for coins in @coins_arr%>
-        <% if coins == cdata["symbol"]%>
-            <%= cdata["name"]%><br/>
-        <% end %>
+
+    <% for cdata in @extra_coin_price["data"] %>
+      <% if "ADA" == cdata["symbol"]%>
+          <% for quoteprice in cdata["quote"] %>
+            <%= quoteprice[1]["price"] %>
+          <% end %>
+      <% end %>
     <% end %>
-<% end %>
+
+
+<br/>
 
 <br/>
 <div class="container-fluid">
