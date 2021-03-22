@@ -22,17 +22,6 @@
   </tbody>
 </table>
 
-
-
-    <% for cdata in @extra_coin_price["data"] %>
-      <% if "ADA" == cdata["symbol"]%>
-          <% for quoteprice in cdata["quote"] %>
-            <%= quoteprice[1]["price"] %>
-          <% end %>
-      <% end %>
-    <% end %>
-
-
 <br/>
 
 <br/>

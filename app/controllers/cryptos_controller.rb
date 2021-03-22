@@ -12,8 +12,6 @@ class CryptosController < ApplicationController
     @curr_response = Net::HTTP.get(@curr_uri)
     @extra_coin_price = JSON.parse(@curr_response)
     
-    @coins_arr = ["BTC", "ADA", "OMG", "XRP", "STEEM", "ETH" ] 
-    
     @profit_loss_sum = 0
   end
 
