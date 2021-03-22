@@ -48,9 +48,9 @@
 
 <br/>
 
-<strong>Current Profit/Loss: </strong> <%= number_to_currency(@profit_loss_sum) %>
-
-<br/>
+<div class="jumbotron">
+  <strong>Current Profit/Loss: </strong> <%= number_to_currency(@profit_loss_sum) %>
+</div>
 <br/>
 
 <%= link_to 'New Crypto', new_crypto_path, class: "btn btn-success" %>

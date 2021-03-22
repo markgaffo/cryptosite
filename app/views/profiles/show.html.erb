@@ -20,6 +20,12 @@
   <%= @profile.number %>
 </p>
 
+<p>
+  <strong>Number:</strong>
+  <%= @profile.full_name %>
+</p>
+
+
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Delete', profile_path(@profile), method: :delete, data: { confirm: 'Are you sure?' } %>
 

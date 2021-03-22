@@ -19,6 +19,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1 or /profiles/1.json
   def show
+    @profile = Profile.find(params[:id]).decorate
   end
 
   # GET /profiles/new
