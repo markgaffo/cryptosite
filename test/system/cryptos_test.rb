@@ -1,9 +1,9 @@
 require "application_system_test_case"
 
 class CryptosTest < ApplicationSystemTestCase
-  # test "visiting the index" do
-  #   visit cryptos_url
-  #
-  #   assert_selector "h1", text: "Crypto"
-  # end
+  test "visit index" do
+    sign_in users(:regular)
+    visit cryptos_url
+    assert_selector "h1", text: "Portfolio information"
+  end
 end
