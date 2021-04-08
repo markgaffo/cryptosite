@@ -5,7 +5,7 @@ class CryptosControllerTest < ActionDispatch::IntegrationTest
     @crypto = cryptos(:one)
   end
 
-  test "should get index" do
+  test "get index" do
     get cryptos_url
     assert_response :success
   end
