@@ -22,7 +22,7 @@ class ProfilesTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "update Profile" do
+  test "Update Profile" do
     sign_in users(:regular)
     visit profile_url(@profile)
     click_on "Edit", match: :first
@@ -36,7 +36,7 @@ class ProfilesTest < ApplicationSystemTestCase
     assert_text "Profile was successfully updated"
   end
 
-  test "delete Profile" do
+  test "Delete Profile" do
     sign_in users(:regular)
     visit profile_url(@profile)
     page.accept_confirm do
