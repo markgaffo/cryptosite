@@ -13,6 +13,11 @@ class CryptosController < ApplicationController
     @extra_coin_price = JSON.parse(@curr_response)
     
     @profit_loss_sum = 0
+    
+    cookies[:message] = {
+    value: "Welcome to the portfolio page"
+  }
+    
   end
 
   # GET /cryptos/1 or /cryptos/1.json
@@ -22,6 +27,8 @@ class CryptosController < ApplicationController
   # GET /cryptos/new
   def new
     @crypto = Crypto.new
+    
+    session[:new_crypto] = "add a crypto"
   end
 
   # GET /cryptos/1/edit

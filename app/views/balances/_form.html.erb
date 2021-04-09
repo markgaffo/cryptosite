@@ -13,11 +13,12 @@
 
   <div class="field">
     <%= form.label :balance %>
-    €
-    <%= form.number_field :balance, id: :balance_balance %>
+    <%= form.number_field :balance, id: :balance_balance, class: "form-control" %>
   </div>
+  <br/>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Add", class: "btn btn-primary" %>
   </div>
+  <br/>
 <% end %>
