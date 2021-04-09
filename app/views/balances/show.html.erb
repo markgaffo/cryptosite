@@ -1,6 +1,6 @@
 <p>
-  <strong>Balance:</strong>
-  <%= @balance.balance %>
+  <strong>Amount spent:</strong>
+  $<%= @balance.balance %>
 </p>
 
 <p>
@@ -8,5 +8,4 @@
   <%= @balance.user.username %>
 </p>
 
-<%= link_to 'Edit', edit_balance_path(@balance), :class =>"btn btn-info add-new" %> |
 <%= link_to 'Back', balances_path, :class =>"btn btn-info add-new" %>

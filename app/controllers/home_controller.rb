@@ -24,6 +24,7 @@ class HomeController < ApplicationController
     
     @coins_arr = ["BTC", "ADA", "OMG", "XRP", "STEEM", "ETH" ] 
     
+    
   end
   
   def prices

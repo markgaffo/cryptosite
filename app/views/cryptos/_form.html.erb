@@ -10,7 +10,9 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <br/>
+  
   <div class="field">
     <%= form.label "Symbol of coin" %>
     <%= form.text_field :symbol, id: :crypto_symbol, class: "form-control" %>
@@ -32,6 +34,7 @@
 
   <br/>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Add", class: "btn btn-primary" %>
   </div>
+  <br/>
 <% end %>

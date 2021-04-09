@@ -1,31 +1,37 @@
-<p id="notice"><%= notice %></p>
-<h1> <%= @profile.user.username %> Profile Page</h1>
-<p>
-  <strong>First name:</strong>
-  <%= @profile.first_name %>
-</p>
+  <h1> <%= @profile.user.username %> Profile Page</h1>
+  
+  <br/>
+  <h3>Welcome <%= @profile.full_name %> to you're profile page</h3>
+  <h3>A username of "<%= @profile.user.username %>" has been generated for you!</h3>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @profile.last_name %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @profile.country %>
-</p>
-
-<p>
-  <strong>Number:</strong>
-  <%= @profile.number %>
-</p>
-
-<p>
-  <strong>Full Name:</strong>
-  <%= @profile.full_name %>
-</p>
+  
 
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Delete', profile_path(@profile), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <br/>
+  
+<div class="jumbotron">
+  <p>
+    <strong>First name:</strong>
+    <%= @profile.first_name %>
+  </p>
+  
+  <p>
+    <strong>Last name:</strong>
+    <%= @profile.last_name %>
+  </p>
+  
+  <p>
+    <strong>Country:</strong>
+    <%= @profile.country %>
+  </p>
+  
+  <p>
+    <strong>Number:</strong>
+    <%= @profile.number %>
+  </p>
+</div>
+
+
+<%= link_to 'Edit', edit_profile_path(@profile), :class => "btn btn-warning" %> |
+<%= link_to 'Delete', profile_path(@profile), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
 
