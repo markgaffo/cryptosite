@@ -24,7 +24,7 @@ class ProfilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show profile" do
-    get profile_url(@profile)
+    get profiles_url(@profile)
     assert_response :success
   end
 
@@ -34,13 +34,13 @@ class ProfilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update profile" do
-    patch profile_url(@profile), params: { profile: { country: @profile.country, first_name: @profile.first_name, last_name: @profile.last_name, number: @profile.number } }
-    assert_redirected_to profile_url(@profile)
+    patch profiles_url(@profile), params: { profile: { country: @profile.country, first_name: @profile.first_name, last_name: @profile.last_name, number: @profile.number } }
+    assert_redirected_to profiles_url(@profile)
   end
 
   test "should destroy profile" do
     assert_difference('Profile.count', -1) do
-      delete profile_url(@profile)
+      delete profiles_url(@profile)
     end
 
     assert_redirected_to profiles_url

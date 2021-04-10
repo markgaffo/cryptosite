@@ -14,10 +14,8 @@ class CryptosController < ApplicationController
     
     @profit_loss_sum = 0
     
-    cookies[:message] = {
-    value: "Welcome to the portfolio page"
-  }
-    
+    cookies[:message] = "Welcome to the portfolio page, this is a cookie"
+  
   end
 
   # GET /cryptos/1 or /cryptos/1.json

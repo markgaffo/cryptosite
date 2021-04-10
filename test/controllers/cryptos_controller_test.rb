@@ -20,11 +20,11 @@ class CryptosControllerTest < ActionDispatch::IntegrationTest
       post cryptos_url, params: { crypto: { amount_owned: @crypto.amount_owned, cost_per: @crypto.cost_per, symbol: @crypto.symbol, user_id: @crypto.user_id } }
     end
 
-    assert_redirected_to crypto_url(Crypto.last)
+    assert_redirected_to cryptos_url(Crypto.last)
   end
 
   test "should show crypto" do
-    get crypto_url(@crypto)
+    get cryptos_url(@crypto)
     assert_response :success
   end
 
@@ -34,13 +34,13 @@ class CryptosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update crypto" do
-    patch crypto_url(@crypto), params: { crypto: { amount_owned: @crypto.amount_owned, cost_per: @crypto.cost_per, symbol: @crypto.symbol, user_id: @crypto.user_id } }
-    assert_redirected_to crypto_url(@crypto)
+    patch cryptos_url(@crypto), params: { crypto: { amount_owned: @crypto.amount_owned, cost_per: @crypto.cost_per, symbol: @crypto.symbol, user_id: @crypto.user_id } }
+    assert_redirected_to cryptos_url(@crypto)
   end
 
   test "should destroy crypto" do
     assert_difference('Crypto.count', -1) do
-      delete crypto_url(@crypto)
+      delete cryptos_url(@crypto)
     end
 
     assert_redirected_to cryptos_url

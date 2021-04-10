@@ -20,11 +20,11 @@ class BalancesControllerTest < ActionDispatch::IntegrationTest
       post balances_url, params: { balance: { balance: @balance.balance, user_id: @balance.user_id } }
     end
 
-    assert_redirected_to balance_url(Balance.last)
+    assert_redirected_to balances_url(Balance.last)
   end
 
   test "should show balance" do
-    get balance_url(@balance)
+    get balances_url(@balance)
     assert_response :success
   end
 
@@ -34,13 +34,13 @@ class BalancesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update balance" do
-    patch balance_url(@balance), params: { balance: { balance: @balance.balance, user_id: @balance.user_id } }
-    assert_redirected_to balance_url(@balance)
+    patch balances_url(@balance), params: { balance: { balance: @balance.balance, user_id: @balance.user_id } }
+    assert_redirected_to balances_url(@balance)
   end
 
   test "should destroy balance" do
     assert_difference('Balance.count', -1) do
-      delete balance_url(@balance)
+      delete balances_url(@balance)
     end
 
     assert_redirected_to balances_url

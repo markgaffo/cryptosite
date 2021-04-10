@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  symbol: MyString
+  symbol: BTC
   user_id: 1
-  cost_per: 9.99
-  amount_owned: 9.99
+  cost_per: 26000.88
+  amount_owned: 1.00
 
 two:
-  symbol: MyString
+  symbol: XRP
   user_id: 1
-  cost_per: 9.99
-  amount_owned: 9.99
+  cost_per: 1.04
+  amount_owned: 1400.00
