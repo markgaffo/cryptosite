@@ -3,7 +3,7 @@ require 'test_helper'
 class ProfileLoginTest < ActionDispatch::IntegrationTest
    fixtures :all 
   
-  test 'create a profile with only last name' do
+  test 'try to create a profile with only last name' do
     @profile = profiles(:one)
     get '/profiles/new'
     assert_response :success
@@ -16,7 +16,7 @@ class ProfileLoginTest < ActionDispatch::IntegrationTest
     assert_select 'li', "Number can't be blank"
   end
   
-  test 'create a profile with only first name' do
+  test 'try to create a profile with only first name' do
     @profile = profiles(:one)
     get '/profiles/new'
     assert_response :success
@@ -29,7 +29,7 @@ class ProfileLoginTest < ActionDispatch::IntegrationTest
     assert_select 'li', "Number can't be blank"
   end
   
-  test 'create a profile with only country' do
+  test 'try to create a profile with only country' do
     @profile = profiles(:one)
     get '/profiles/new'
     assert_response :success
@@ -42,7 +42,7 @@ class ProfileLoginTest < ActionDispatch::IntegrationTest
     assert_select 'li', "Number can't be blank"
   end
   
-  test 'create a profile with only number' do
+  test 'try to create a profile with only number' do
     @profile = profiles(:one)
     get '/profiles/new'
     assert_response :success

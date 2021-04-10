@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CryptoPageTest < ActionDispatch::IntegrationTest
     
-  test 'create a crypto without symbol and amount' do
+  test 'try to create a crypto without symbol and amount' do
     @crypto = cryptos(:one)
     get '/cryptos/new'
     assert_response :success

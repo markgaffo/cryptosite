@@ -2,7 +2,7 @@ require 'test_helper'
 
 class BalancePageTest < ActionDispatch::IntegrationTest
   
-   test 'create a balance with no information' do
+   test 'try to create a balance with no information' do
     @balance = balances(:one)
     get '/balances/new'
     assert_response :success

@@ -3,7 +3,7 @@ require 'test_helper'
 class UserLoginTest < ActionDispatch::IntegrationTest
   fixtures :all 
   
-  test 'create new user without information' do
+  test 'try to create new user without information' do
     @user = users(:one)
     get '/users/sign_up'
     assert_response :success
