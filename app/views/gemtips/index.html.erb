@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gemtips</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipnumb</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gemtips.each do |gemtip| %>
+      <tr>
+        <td><%= gemtip.tipnumb %></td>
+        <td><%= link_to 'Show', gemtip %></td>
+        <td><%= link_to 'Edit', edit_gemtip_path(gemtip) %></td>
+        <td><%= link_to 'Destroy', gemtip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gemtip', new_gemtip_path %>
