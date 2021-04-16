@@ -26,7 +26,7 @@ class CryptosController < ApplicationController
   def new
     @crypto = Crypto.new
     
-    session[:new_crypto] = "add a crypto"
+    session[:new_crypto] = "Add a crypto"
   end
 
   # GET /cryptos/1/edit
